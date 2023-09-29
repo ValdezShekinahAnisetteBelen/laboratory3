@@ -33,15 +33,12 @@ class Home extends BaseController
     {
         $productId = $this->request->getVar('id');
     
-        // No need to create another instance, use $this->product
-        // $model = new ProductModel();
-    
         // Fetch product information from the database based on $productId
         $productInfo = $this->product->find($productId);
     
         if ($productInfo) {
-            $data['product'] = $productInfo;
-            return view('product_modal', $data); // Load a view with fetched data
+            // Return product details as JSON
+            return json_encode($productInfo);
         } else {
             return "Product not found.";
         }

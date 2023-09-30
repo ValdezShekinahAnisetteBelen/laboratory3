@@ -30,16 +30,18 @@ public function admin()
     return view('admin/include/index', $data); // Pass the $data array to the main view
 }
     
-        public function index()
-        {
-            $data = [
-                'products' => $this->product->findAll()
-            ];
-            return view('index', $data);
-            
-            //'name','description','image','price','category','quantity'
-        }
-    
+public function index()
+{
+    $productModel = new \App\Models\ProductModel();
+    $data['products'] = $productModel->findAll();
+
+    return view('admin/include/data_table', $data);
+}
+public function data_table()
+{
+    $data['products'] = $this->product->findAll();
+    return view('admin/include/data_table', $data);
+}
         public function getProductInfo()
         {
             $productId = $this->request->getVar('id');

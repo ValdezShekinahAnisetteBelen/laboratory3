@@ -85,7 +85,7 @@
 
 
             <!-- Main Content -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main_content">
+            <main role="main" class="col-md-11 ml-sm-auto col-lg-10 px-md-7 main_content">
                 <!-- Banner section -->
                 <section class="banner-container">
                     <img class="banner-img" src="image/slider3.svg" alt="Banner Image">

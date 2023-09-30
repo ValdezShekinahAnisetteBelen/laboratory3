@@ -1,7 +1,6 @@
 <?= $this->include('admin/include/top') ?>
 
 <?= $this->include('admin/include/top1') ?>
-
 <body>
 <?= $this->include('admin/include/header1') ?>
 </body>

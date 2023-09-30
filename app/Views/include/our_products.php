@@ -5,6 +5,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<style>
+        /* Change color of navigation links */
+        ul.nav-tabs li.nav-item a.nav-link,
+        ul.nav-tabs li.nav-item a.nav-link.active,
+        ul.nav-tabs li.nav-item a.nav-link:hover,
+        h3 a,
+        p a {
+            color: orange !important; /* Change the color to orange */
+        }
+        
+        /* Change color of login/registration icons */
+        .fa-sign-in,
+        .fa-user {
+            color: orange !important; /* Change the color to orange */
+        }
+    </style>
 <body>
     <section class="our-products-tab section-tb-padding">
         <div class="container">

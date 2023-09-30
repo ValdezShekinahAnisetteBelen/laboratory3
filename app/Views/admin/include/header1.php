@@ -1,20 +1,126 @@
+<style>
+     /* Set a fixed width for the sidebar */
+.sidebar {
+    background-color: #FFFFFF;
+    color: #000;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto; /* Allow vertical scrolling */
+    padding-top: 70px;
+}
+
+/* Style for the header inside the sidebar */
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for the sidebar menu items */
+#sidebar_menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar_menu li {
+    padding: 10px;
+}
+
+/* Style for the sidebar menu links */
+#sidebar_menu li a {
+    color: #000;
+    text-decoration: none;
+    text-align: left; /* Adjust text alignment to the left */
+    display: block; /* Ensure each link takes full width */
+    padding: 10px 20px; /* Add padding to the links */
+}
+
+/* Adjust the padding for the "Home," "Shop," and "Collection" links */
+#sidebar_menu .sp-link-title {
+    padding-left: 20px; /* Reduce padding to prevent horizontal overflow */
+}
+
+.link-title {
+    padding-left: 20px; /* Reduce padding to prevent horizontal overflow */
+}
+    </style>
+</head>
+<body class="crm_body_bg">
+    <nav class="sidebar">
+        <div class="logo d-flex justify-content-center">
+            <a href="/admins"><img src="admin/img/logo1.svg" alt="" width="300" height="70"></a>
+        </div>
+
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+      <!-- Sidebar Menu -->
+        <ul id="sidebar_menu">
+            <li class="mm-active">
+                <a class="has-arrow" href="#" aria-expanded="false">
+                    <img src="admin/img/menu-icon/dashboard.svg" alt>
+                    <span>Home</span>
+                </a>
+                <ul>
+                    <li>
+                        <a class="active" href="/admins"><img src="admin/img/menu-icon/logo1.svg" alt=""
+                                style="width: 17px; height: 17px;">Anisette </a>
+                    </li>
+                </ul>
+            </li>
+           
+            <li class>
+                <a class="has-arrow" href="#" aria-expanded="false">
+                    <img src="admin/img/menu-icon/8.svg" alt>
+                    <span>Table</span>
+                </a>
+                <ul>
+                    <li><a href="data_table.html">Data Tables</a></li>
+                    <li><a href="bootstrap_table.html">Grid Tables</a></li>
+                </ul>
+            </li>
+            <li class>
+                <a class="has-arrow" href="#" aria-expanded="false">
+                    <img src="admin/img/menu-icon/9.svg" alt>
+                    <span>Charts</span>
+                </a>
+                <ul>
+                    <li><a href="chartjs.html">ChartJS</a></li>
+                    <li><a href="apex_chart.html">Apex Charts</a></li>
+                    <li><a href="chart_sparkline.html">Chart sparkline</a></li>
+                    <li><a href="am_chart.html">am-charts</a></li>
+                    <li><a href="nvd3_charts.html">nvd3 charts.</a></li>
+                </ul>
+            </li>
+            <li class>
+                <a class="has-arrow" href="#" aria-expanded="false">
+                    <img src="admin/img/menu-icon/10.svg" alt>
+                    <span>Widgets</span>
+                </a>
+                <ul>
+                    <li><a href="chart_box_1.html">Chart Boxes 1</a></li>
+                    <li><a href="profilebox.html">Profile Box</a></li>
+                </ul>
+            </li>
+            <li class>
+                <a class="has-arrow" href="#" aria-expanded="false">
+                    <img src="admin/img/menu-icon/map.svg" alt>
+                    <span>Maps</span>
+                </a>
+                <ul>
+                    <li><a href="mapjs.html">Maps JS</a></li>
+                    <li><a href="vector_map.html">Vector Maps</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-    <style>
-        /* Change color of links to black */
-        a {
-            color: black !important; /* Change the color to black */
-        }
-        
-        /* Change color of the search icon to white */
-        .search-btn i.fa-search {
-            color: white;
-        }
-    </style>
-  
-  
+
   <!-- top notificationbar start -->
   <section class="top1">
             <div class="container">
@@ -106,45 +212,5 @@
                                             </div>
                                         </li>
                                        
-                                <!-- header-icon end -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-bottom-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="main-menu-area">
-                                    <div class="main-navigation navbar-expand-xl">
-                                        <div class="box-header menu-close">
-                                            <button class="close-box" type="button"><i class="ion-close-round"></i></button>
-                                        </div>
-                                        <!-- menu start -->
-                                        <div class="navbar-collapse" id="navbarContent">
-                                            <div class="megamenu-content">
-                                                <div class="mainwrap">
-                                                    <ul class="main-menu">
-                                                        <li class="menu-link parent">
-                                                               <!--HOME-->
-                                                            <a href="/welcome_message" class="link-title">
-                                                                <span class="sp-link-title">Home</span>
-                                                            </a>
-                                                                <!---->
-                                                           
-                                                        <!--SHOP-->
-                                                        <li class="menu-link parent">
-                                                            <a href="/shop" class="link-title">
-                                                                <span class="sp-link-title">Shop</span>
-                                                           
-                                                            </a>
-                                                        <!---->
-                                                           
-                                                        <li class="menu-link parent">
-                                                            <a href="grid-list.html" class="link-title">
-                                                                <span class="sp-link-title">Collection</span>
-                                                          
-                                                            </a>
-                                                          
-                                                      
-        </header>
+                            
+                                                                </header>

@@ -4,17 +4,17 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    private $product;
+    private $product1;
     public function __construct()
     {
-        $this->product = new \App\Models\ProductModel();
+        $this->product1 = new \App\Models\ProductModel();
       
     }
 
     public function shop()
     {
         $data = [
-            'products' => $this->product->findAll()
+            'products' => $this->product1->findAll()
         ];
         return view('shop', $data);
     }
@@ -22,7 +22,7 @@ class Home extends BaseController
     public function index()
     {
         $data = [
-            'products' => $this->product->findAll()
+            'products' => $this->product1->findAll()
         ];
         return view('welcome_message', $data);
         
@@ -34,7 +34,7 @@ class Home extends BaseController
         $productId = $this->request->getVar('id');
     
         // Fetch product information from the database based on $productId
-        $productInfo = $this->product->find($productId);
+        $productInfo = $this->product1->find($productId);
     
         if ($productInfo) {
             // Return product details as JSON

@@ -26,15 +26,14 @@ class AdminFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
 
-        // Check if the user is logged in
         if (!session()->get("isLoggedIn")) {
             return redirect()->to('login');
         }
 
-        // Check if the user has the "admin" role
+      
         if (session()->get("role") !== "admin") {
-            // If the user does not have the "admin" role, deny access
-            return redirect()->to('/'); // balik ng balik sa customer index pag di admin
+          
+            return redirect()->to('/'); 
         }
     }
 

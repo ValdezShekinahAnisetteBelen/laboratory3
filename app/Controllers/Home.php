@@ -2,31 +2,34 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
+
 class Home extends BaseController
 {
-    private $product1;
+    private $productModel;
+
     public function __construct()
     {
-        $this->product1 = new \App\Models\ProductModel();
-      
+        $this->productModel = new \App\Models\ProductModel();
+    }
+
+    private function loadProductData()
+    {
+        return [
+            'products' => $this->productModel->findAll()
+        ];
     }
 
     public function shop()
     {
-        $data = [
-            'products' => $this->product1->findAll()
-        ];
+        $data = $this->loadProductData();
         return view('shop', $data);
     }
 
     public function index()
     {
-        $data = [
-            'products' => $this->product1->findAll()
-        ];
+        $data = $this->loadProductData();
         return view('anisette', $data);
-        
-        //'name','description','image','price','category','quantity'
     }
 
     public function getProductInfo()
@@ -34,7 +37,7 @@ class Home extends BaseController
         $productId = $this->request->getVar('id');
     
         // Fetch product information from the database based on $productId
-        $productInfo = $this->product1->find($productId);
+        $productInfo = $this->productModel->find($productId);
     
         if ($productInfo) {
             // Return product details as JSON
@@ -43,5 +46,4 @@ class Home extends BaseController
             return "Product not found.";
         }
     }
-    
 }

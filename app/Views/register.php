@@ -1,90 +1,96 @@
 <?= $this->include('admin/include/top4') ?>
 
+
 <body class="home-1">
-    <!-- top notificationbar start -->
+<style>
+   
+   .single-input-fields input {
+       width: 100%; 
+   }
+
+   .submit-btn3 {
+       background-color: orange;
+       color: white;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 5px;
+       cursor: pointer;
+   }
+
+   .submit-btn3:hover {
+       background-color: darkorange;
+   }
+
+   .login-check button {
+       background-color: orange;
+       color: white;
+       border: none;
+       padding: 10px 20px;
+       border-radius: 5px;
+       cursor: pointer;
+   }
+
+   .login-check button:hover {
+       background-color: black;
+   }
+   .anisette-button {
+       display: inline-block;
+       padding: 10px 20px;
+       background-color: #FAF8ED;
+       border: none;
+       border-radius: 20px; 
+       text-decoration: none;
+       color: white;
+       font-weight: bold;
+       cursor: pointer;
+   }
+
+   .anisette-button:hover {
+       background-color: greenyellow;
+   }
+</style>
     <section class="top1">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <ul class="top-home">
                         <li class="top-home-li">
-                            <!-- currency start -->
                             <div class="currency">
-                                <span class="currency-head">currency:</span>
+                                <span class="currency-head">Currency:</span>
                                 <div class="currency-drop">
-                                    <div class="eur">
-                                        <img class="img-fluid" src="<?= base_url() ?>image/c-icon1.png" alt="">
-                                        <span class="cur-name">EUR</span>
-                                    </div>
-                                    <ul class="all-currency">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon4.png" alt="">
-                                                <span class="cur-name">AFN</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon2.png" alt="">
-                                                <span class="cur-name">BDT</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon3.png" alt="">
-                                                <span class="cur-name">CAD</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon1.png" alt="">
-                                                <span class="cur-name">EUR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon5.png" alt="">
-                                                <span class="cur-name">GBP</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon6.png" alt="">
-                                                <span class="cur-name">INR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon7.png" alt="">
-                                                <span class="cur-name">SAR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon8.png" alt="">
-                                                <span class="cur-name">USD</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <?php
+                                    $currencies = [
+                                        ['AFN', 'c-icon4.png'],
+                                        ['BDT', 'c-icon2.png'],
+                                        ['CAD', 'c-icon3.png'],
+                                        ['EUR', 'c-icon1.png'],
+                                        ['GBP', 'c-icon5.png'],
+                                        ['INR', 'c-icon6.png'],
+                                        ['SAR', 'c-icon7.png'],
+                                        ['USD', 'c-icon8.png']
+                                    ];
+
+                                    foreach ($currencies as $currency) {
+                                        echo '<a href="javascript:void(0)">';
+                                        echo '<img class="img-fluid" src="' . base_url() . 'image/' . $currency[1] . '" alt="' . $currency[0] . '">';
+                                        echo '<span class="cur-name">' . $currency[0] . '</span>';
+                                        echo '</a>';
+                                    }
+                                    ?>
                                 </div>
                             </div>
-                            <!-- currency end -->
                         </li>
                         <li class="top-home-li t-content">
-                            <!-- offer text start -->
                             <div class="top-content">
                                 <p class="top-slogn"><span class="top-c">Free shipping</span> orders from all item</p>
                             </div>
-                            <!-- offer text end -->
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- top notificationbar end -->
 
-    <!-- breadcrumb start -->
     <section class="about-breadcrumb">
         <div class="about-back section-tb-padding" style="background-image: url(image/about-image.jpg)">
             <div class="container">
@@ -100,8 +106,15 @@
             </div>
         </div>
     </section>
-    <!-- breadcrumb end -->
-    <!-- login start -->
+    <section class="anisette-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <button class="anisette-button"><a href="/anisette">Window Shopping at Anisette Pure Living</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section-tb-padding">
         <div class="container">
             <div class="row">
@@ -110,57 +123,49 @@
                         <div class="register-box">
                             <h1>Create account</h1>
                             <p>Please register below account detail</p>
-                            
                             <div class="container mt-5">
                                 <div class="row justify-content-md-center">
                                     <div class="col-5">
-                                        <h2>Create Account</h2>
-                                        <!-- Display validation errors if any -->
-                                <?php if (isset($validation)): ?>
-                                    <div class="alert alert-danger">
-                                    <ul>
-                                        <?php foreach ($validation->getErrors() as $error): ?>
-                                        <li>
-                                            <?= esc($error) ?>
-                                        </li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                    </div>
-                                <?php endif; ?>
-                                <form action="<?= base_url() ?>registration" method="post">
-                                 <div class="input-box">
-                                    <div class="single-input-fields">
-                                        <label>Username</label>
-                                        <input type="text" name="username" placeholder="Enter full name" value="<?= old('name') ?>"
-                                        class="form-control" required>
-                                    </div>
-                                    <div class="single-input-fields">
-                                        <label>Email Address</label>
-                                        <input type="email" name="email" placeholder="Enter email address" value="<?= old('email') ?>"
-                                        class="form-control" required>
-                                    </div>
-                                    <div class="single-input-fields">
-                                        <label>Password</label>
-                                        <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
-                                    </div>
-                                    <div class="single-input-fields">
-                                        <label>Confirm Password</label>
-                                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control"
-                                        required>
-                                    </div>
-                                    </div>
-                                    <div class="register-footer">
-
-                                    <button type="submit" class="submit-btn3">Sign Up</button>
-                                    </div>
-                                </form>
+                                       
+                                        <?php if (isset($validation)): ?>
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    <?php foreach ($validation->getErrors() as $error): ?>
+                                                        <li><?= esc($error) ?></li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </div>
+                                        <?php endif; ?>
+                                        <form action="<?= base_url() ?>registration" method="post">
+                                            <div class="input-box">
+                                                <div class="single-input-fields">
+                                                    <label>Username</label>
+                                                    <input type="text" name="username" placeholder="Enter full name" value="<?= old('name') ?>" class="form-control" required>
+                                                </div>
+                                                <div class="single-input-fields">
+                                                    <label>Email Address</label>
+                                                    <input type="email" name="email" placeholder="Enter email address" value="<?= old('email') ?>" class="form-control" required>
+                                                </div>
+                                                <div class="single-input-fields">
+                                                    <label>Password</label>
+                                                    <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
+                                                </div>
+                                                <div class="single-input-fields">
+                                                    <label>Confirm Password</label>
+                                                    <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="register-footer">
+                                            <button type="submit" class="submit-btn3 orange-btn">Sign Up</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="register-account">
                             <h4>Already an account holder?</h4>
-                           <a href="<?= base_url() ?>login"> Login</a>
+                            <a href="/login" class="ceate-a">Login</a>
                             <div class="register-info">
                                 <a href="terms-conditions.html" class="terms-link"><span>*</span> Terms & conditions.</a>
                                 <p>Your privacy and security are important to us. For more information on how we use your data read our <a href="privacy-policy.html">privacy policy</a></p>
@@ -171,8 +176,7 @@
             </div>
         </div>
     </section>
-    <!-- login end -->
-    <!-- footer start -->
+
     <section class="footer-one section-tb-padding">
         <div class="container">
             <div class="row">
@@ -306,15 +310,14 @@
             </div>
         </div>
     </section>
-    <!-- footer end -->
-    <!-- footer copyright start -->
+
     <section class="footer-copyright">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <ul class="f-bottom">
                         <li class="f-c f-copyright">
-                            <p>Copyright <i class="fa fa-copyright"></i> 2023 spacingtech</p>
+                            <p>Copyright &copy; 2023 spacingtech</p>
                         </li>
                         <li class="f-c f-social">
                             <a href="https://www.whatsapp.com/" class="f-icn-link"><i class="fa fa-whatsapp"></i></a>
@@ -332,15 +335,9 @@
             </div>
         </div>
     </section>
-    <!-- footer copyright end -->
-    <!-- back to top start -->
+
     <a href="javascript:void(0)" class="scroll" id="top">
         <span><i class="fa fa-angle-double-up"></i></span>
     </a>
-    <!-- back to top end -->
-    <div class="mm-fullscreen-bg"></div>
-    <!-- jquery -->
 </body>
-
-<!-- Mirrored from spacingtech.com/html/vegist-final/vegist/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Sep 2023 12:13:47 GMT -->
 </html>

@@ -1,143 +1,98 @@
 <?= $this->include('include/top3') ?>
-<style>
-    /* Add these styles to your CSS file */
-.orange-btn {
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="<?= base_url() ?>css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/swiper.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>css/custom.css">
+    <style>
+        /* Add these styles to your CSS file */
+        .orange-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.orange-btn:hover {
-    background-color: darkorange;
-}
-
-</style>
+        .orange-btn:hover {
+            background-color: darkorange;
+        }
+    </style>
+</head>
 <body class="home-1">
-    <!-- top notificationbar start -->
     <section class="top1">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <ul class="top-home">
                         <li class="top-home-li">
-                            <!-- currency start -->
                             <div class="currency">
-                                <span class="currency-head">currency:</span>
+                                <span class="currency-head">Currency:</span>
                                 <div class="currency-drop">
                                     <div class="eur">
-                                        <img class="img-fluid" src="<?=base_url()?>image/c-icon1.png" alt="">
+                                        <img class="img-fluid" src="<?= base_url() ?>image/c-icon1.png" alt="">
                                         <span class="cur-name">EUR</span>
                                     </div>
                                     <ul class="all-currency">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon4.png" alt="">
-                                                <span class="cur-name">AFN</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon2.png" alt="">
-                                                <span class="cur-name">BDT</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon3.png" alt="">
-                                                <span class="cur-name">CAD</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon1.png" alt="">
-                                                <span class="cur-name">EUR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon5.png" alt="">
-                                                <span class="cur-name">GBP</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon6.png" alt="">
-                                                <span class="cur-name">INR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon7.png" alt="">
-                                                <span class="cur-name">SAR</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon8.png" alt="">
-                                                <span class="cur-name">USD</span>
-                                            </a>
-                                        </li>
+                                        <?php
+                                        $currencies = [
+                                            ['AFN', 'c-icon4.png'],
+                                            ['BDT', 'c-icon2.png'],
+                                            ['CAD', 'c-icon3.png'],
+                                            ['EUR', 'c-icon1.png'],
+                                            ['GBP', 'c-icon5.png'],
+                                            ['INR', 'c-icon6.png'],
+                                            ['SAR', 'c-icon7.png'],
+                                            ['USD', 'c-icon8.png']
+                                        ];
+
+                                        foreach ($currencies as $currency) {
+                                            echo '<li>';
+                                            echo '<a href="javascript:void(0)">';
+                                            echo '<img class="img-fluid" src="' . base_url() . 'image/' . $currency[1] . '" alt="' . $currency[0] . '">';
+                                            echo '<span class="cur-name">' . $currency[0] . '</span>';
+                                            echo '</a>';
+                                            echo '</li>';
+                                        }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
-                            <!-- currency end -->
-                            <!-- mobile search start -->
-                            <div class="r-search">
-                                <a href="#r-search-modal" class="search-popuup" data-bs-toggle="modal"><i class="fa fa-search"></i></a>
-                                <div class="modal fade" id="r-search-modal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <div class="m-drop-search">
-                                                    <input type="text" name="search" placeholder="Search products, brands or advice">
-                                                    <a href="search.html" class="search-btn"><i class="fa fa-search"></i></a>
-                                                </div>
-                                                <button type="button" class="close" data-bs-dismiss="modal"><i class="ion-close-round"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- mobile search end -->
                         </li>
                         <li class="top-home-li t-content">
-                            <!-- offer text start -->
                             <div class="top-content">
-                                <p class="top-slogn"><span class="top-c">Free shipping</span> orders from all item</p>
+                                <p class="top-slogn"><span class="top-c">Free shipping</span> orders from all items</p>
                             </div>
-                            <!-- offer text end -->
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- top notificationbar end -->
 
-
-        <!-- mobile menu start -->
-        <div class="header-bottom-area mobile">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="main-menu-area">
-                            <div class="main-navigation navbar-expand-xl">
-                                <div class="box-header menu-close">
-                                    <button class="close-box" type="button"><i class="ion-close-round"></i></button>
+    <div class="header-bottom-area mobile">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="main-menu-area">
+                        <div class="main-navigation navbar-expand-xl">
+                            <div class="box-header menu-close">
+                                <button class="close-box" type="button"><i class="ion-close-round"></i></button>
+                            </div>
+                            <div class="img-hotline">
+                                <div class="image-line">
+                                    <a href="javascript:void(0)"><img src="<?= base_url() ?>image/icon_contact.png" class="img-fluid" alt="image-icon"></a>
                                 </div>
-                           
-                                <!-- menu end -->
-                                <div class="img-hotline">
-                                    <div class="image-line">
-                                        <a href="javascript:void(0)"><img src="<?=base_url()?>image/icon_contact.png" class="img-fluid" alt="image-icon"></a>
-                                    </div>
-                                    <div class="image-content">
-                                        <span class="hot-l">Hotline:</span>
-                                        <span>0123 456 789</span>
-                                    </div>
+                                <div class="image-content">
+                                    <span class="hot-l">Hotline:</span>
+                                    <span>0123 456 789</span>
                                 </div>
                             </div>
                         </div>
@@ -145,9 +100,8 @@
                 </div>
             </div>
         </div>
-        <!-- mobile menu end -->
-        
-    <!-- breadcrumb start -->
+    </div>
+
     <section class="about-breadcrumb">
         <div class="about-back section-tb-padding" style="background-image: url(image/about-image.jpg)">
             <div class="container">
@@ -155,7 +109,6 @@
                     <div class="col">
                         <div class="about-l">
                             <ul class="about-link">
-                                
                                 <li class="about-p"><span>Login</span></li>
                             </ul>
                         </div>
@@ -164,49 +117,42 @@
             </div>
         </div>
     </section>
-    <!-- breadcrumb end -->
-    <!-- login start -->
+
     <section class="section-tb-padding">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="login-area">
                         <div class="login-box">
-
-                            <!-- Display Flash Message (if any) -->
                             <?php if (session()->getFlashdata('msg')): ?>
                                 <div class="alert alert-warning">
                                     <?= session()->getFlashdata('msg') ?>
                                 </div>
                             <?php endif; ?>
 
-                            <form action=" <?= base_url() ?>loginAuth" method="post">
+                            <form action="<?= base_url() ?>loginAuth" method="post">
                                 <div class="input-box">
                                     <div class="single-input-fields">
                                         <label>Username or Email Address</label>
-                                        <input type="text" name="usernameOrEmail" placeholder="Username / Email address"
-                                            value="<?= set_value('email') ?>" class="form-control">
+                                        <input type="text" name="usernameOrEmail" placeholder="Username / Email address" value="<?= set_value('email') ?>" class="form-control">
                                     </div>
                                     <div class="single-input-fields">
                                         <label>Password</label>
-                                        <input type="password" name="password" placeholder="Enter Password"
-                                            class="form-control">
+                                        <input type="password" name="password" placeholder="Enter Password" class="form-control">
                                     </div>
                                     <div class="single-input-fields login-check">
-                                    <button type="submit" class="submit-btn3 orange-btn">Login</button>
-
+                                        <button type="submit" class="submit-btn3 orange-btn">Login</button>
                                     </div>
                                     <label for="fruit1">Keep me logged in</label>
                                 </div>
+                            </form>
                         </div>
                         <div class="login-account">
                             <h4>Don't have an account?</h4>
                             <a href="/register" class="ceate-a">Create account</a>
                             <div class="login-info">
                                 <a href="terms-conditions.html" class="terms-link"><span>*</span> Terms & conditions.</a>
-                                <p>Your privacy and security are important to us. For more information on how we use your data read our <a href="privacy-policy.html">privacy policy</a></p>
-                           
-                                </form>
+                                <p>Your privacy and security are important to us. For more information on how we use your data, read our <a href="privacy-policy.html">privacy policy</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -214,8 +160,7 @@
             </div>
         </div>
     </section>
-    <!-- login end -->
-    <!-- footer start -->
+
     <section class="footer-one section-tb-padding">
         <div class="container">
             <div class="row">
@@ -244,7 +189,7 @@
                         <ul class="footer-ul">
                             <li class="footer-li footer-logo">
                                 <a href="index1.html">
-                                    <img class="img-fluid" src="<?=base_url()?>image/logo1.png" alt="">
+                                    <img class="img-fluid" src="<?= base_url() ?>image/logo1.png" alt="">
                                 </a>
                             </li>
                             <li class="footer-li footer-address">
@@ -254,8 +199,7 @@
                                     </li>
                                     <li class="footer-info">
                                         <h6>Address</h6>
-                                        <span>401 Broadway 24th floor
-</span>
+                                        <span>401 Broadway 24th floor</span>
                                         <span>Near ant mall cross road</span>
                                     </li>
                                 </ul>
@@ -299,7 +243,7 @@
                                     <li class="f-link-ul-li"><a href="grid-list.html">Fast foods</a></li>
                                     <li class="f-link-ul-li"><a href="grid-list.html">Vegetable</a></li>
                                     <li class="f-link-ul-li"><a href="grid-list.html">Salads</a></li>
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Bestseller</a></li>
+                                    <li class="f-link-ul-li"><a href="grid-list.html">Bestsellers</a></li>
                                 </ul>
                             </div>
                             <div class="f-link">
@@ -350,15 +294,14 @@
             </div>
         </div>
     </section>
-    <!-- footer end -->
-    <!-- footer copyright start -->
+
     <section class="footer-copyright">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <ul class="f-bottom">
                         <li class="f-c f-copyright">
-                            <p>Copyright <i class="fa fa-copyright"></i> 2023 spacingtech</p>
+                            <p>Copyright &copy; 2023 spacingtech</p>
                         </li>
                         <li class="f-c f-social">
                             <a href="https://www.whatsapp.com/" class="f-icn-link"><i class="fa fa-whatsapp"></i></a>
@@ -369,37 +312,27 @@
                             <a href="https://www.youtube.com/" class="f-icn-link"><i class="fa fa-youtube"></i></a>
                         </li>
                         <li class="f-c f-payment">
-                            <a href="checkout-1.html"><img src="<?=base_url()?>image/payment.png" class="img-fluid" alt="payment image"></a>
+                            <a href="checkout-1.html"><img src="<?= base_url() ?>image/payment.png" class="img-fluid" alt="payment image"></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- footer copyright end -->
-    <!-- back to top start -->
+
     <a href="javascript:void(0)" class="scroll" id="top">
         <span><i class="fa fa-angle-double-up"></i></span>
     </a>
-    <!-- back to top end -->
+
     <div class="mm-fullscreen-bg"></div>
-  
 </body>
 
-  <!-- jquery -->
-  <script src="<?base_url()?>js/modernizr-2.8.3.min.js"></script>
-    <script src="<?base_url()?>js/jquery-3.6.0.min.js"></script>
-    <!-- bootstrap -->
-    <script src="<?base_url()?>js/bootstrap.min.js"></script>
-    <!-- popper -->
-    <script src="<?base_url()?>js/popper.min.js"></script>
-    <!-- fontawesome -->
-    <script src="<?base_url()?>js/fontawesome.min.js"></script>
-    <!-- owl carousal -->
-    <script src="<?base_url()?>js/owl.carousel.min.js"></script>
-    <!-- swiper -->
-    <script src="<?base_url()?>js/swiper.min.js"></script>
-    <!-- custom -->
-    <script src="<?base_url()?>js/custom.js"></script>
-<!-- Mirrored from spacingtech.com/html/vegist-final/vegist/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Sep 2023 12:13:47 GMT -->
+<script src="<?= base_url() ?>js/modernizr-2.8.3.min.js"></script>
+<script src="<?= base_url() ?>js/jquery-3.6.0.min.js"></script>
+<script src="<?= base_url() ?>js/bootstrap.min.js"></script>
+<script src="<?= base_url() ?>js/popper.min.js"></script>
+<script src="<?= base_url() ?>js/fontawesome.min.js"></script>
+<script src="<?= base_url() ?>js/owl.carousel.min.js"></script>
+<script src="<?= base_url() ?>js/swiper.min.js"></script>
+<script src="<?= base_url() ?>js/custom.js"></script>
 </html>

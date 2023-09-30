@@ -18,8 +18,8 @@ $routes->post('/editProduct', 'AdminController::editProduct', ['filter' => 'Admi
 $routes->post('/getProductInfo', 'AdminController::getProductInfo');
 $routes->get('/login', 'UserController::login');
 $routes->get('/logout', 'UserController::logout');
-$routes->get('/register', 'UserController::register'); // GET request for registration page
-$routes->post('/registration', 'UserController::registration'); // POST request to process registration data
+$routes->get('/register', 'UserController::register');
+$routes->post('/registration', 'UserController::registration');
 $routes->post('/loginAuth', 'UserController::loginAuth');
 
 

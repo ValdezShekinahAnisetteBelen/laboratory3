@@ -34,20 +34,21 @@
        background-color: black;
    }
    .anisette-button {
-       display: inline-block;
-       padding: 10px 20px;
-       background-color: #FAF8ED;
-       border: none;
-       border-radius: 20px; 
-       text-decoration: none;
-       color: white;
-       font-weight: bold;
-       cursor: pointer;
-   }
+        background-color: orange;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 
-   .anisette-button:hover {
-       background-color: greenyellow;
-   }
+    .anisette-button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .anisette-button:hover {
+        background-color: greenyellow;
+    }
 </style>
     <section class="top1">
         <div class="container">
@@ -108,9 +109,14 @@
     </section>
     <section class="anisette-menu">
         <div class="container">
-            <div class="row">
+            <div class="row">      
                 <div class="col">
-                    <button class="anisette-button"><a href="/anisette">Window Shopping at Anisette Pure Living</a></button>
+                    <button class="anisette-button">
+                        <a href="/anisette">
+                            <i class="fa fa-shopping-cart"></i> Window Shopping at Anisette Pure Living
+                        </a>
+                    </button>
+                </div>
                 </div>
             </div>
         </div>

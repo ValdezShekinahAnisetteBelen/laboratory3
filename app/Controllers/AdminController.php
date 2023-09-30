@@ -20,39 +20,39 @@ class AdminController extends BaseController
         ];
     }
 
-    public function shop1()
+    private function returnViewWithData($viewName)
     {
         $data = $this->loadProductData();
-        return view('shop1', $data);
+        return view($viewName, $data);
+    }
+
+    public function shop1()
+    {
+        return $this->returnViewWithData('shop1');
     }
 
     public function admin()
     {
-        $data = $this->loadProductData();
-        return view('admin/include/index', $data);
+        return $this->returnViewWithData('admin/include/index');
     }
 
     public function index()
     {
-        $data = $this->loadProductData();
-        return view('admin/include/data_table', $data);
+        return $this->returnViewWithData('admin/include/data_table');
     }
 
     public function data_table()
     {
-        $data = $this->loadProductData();
-        return view('admin/include/data_table', $data);
+        return $this->returnViewWithData('admin/include/data_table');
     }
 
     public function getProductInfo()
     {
         $productId = $this->request->getVar('id');
     
-        // Fetch product information from the database based on $productId
         $productInfo = $this->productModel->find($productId);
     
         if ($productInfo) {
-            // Return product details as JSON
             return json_encode($productInfo);
         } else {
             return "Product not found.";
@@ -71,37 +71,24 @@ class AdminController extends BaseController
             'quantity' => $this->request->getVar('quantity'),
         ];
 
-        // Handle image upload
         $image = $this->request->getFile('image');
 
         if ($image->isValid() && !$image->hasMoved()) {
-            // Define the upload directory
             $uploadPath = FCPATH . 'image/';
-
-            // Generate a unique filename
             $newName = $image->getRandomName();
+            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
 
-            // Set allowed image types
-            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg']; // Add more if needed
-
-            // Check if the uploaded file is an allowed image type
             if (in_array($image->getClientExtension(), $allowedTypes)) {
-                // Move the uploaded image to the upload directory
                 $image->move($uploadPath, $newName);
-
-                // Save the image URL (relative to base URL) to the data array
-                $data['image'] = 'image/' . $newName; // Adjust the path as needed
+                $data['image'] = 'image/' . $newName;
             } else {
-                // Handle invalid image type (e.g., show an error message)
                 return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
             }
         }
 
         if (!empty($id)) {
-            // Update existing record
             $this->productModel->set($data)->where('id', $id)->update();
         } else {
-            // Insert a new record
             $this->productModel->insert($data);
         }
 
@@ -116,8 +103,7 @@ class AdminController extends BaseController
 
     public function edit($id)
     {
-        $data = $this->loadProductData();
-        return view('products', $data);
+        return $this->returnViewWithData('products');
     }
 
     public function editProduct()
@@ -131,33 +117,21 @@ class AdminController extends BaseController
             'quantity' => $this->request->getVar('quantity'),
         ];
 
-        // Handle image upload
         $image = $this->request->getFile('image');
 
         if ($image->isValid() && !$image->hasMoved()) {
-            // Define the upload directory
             $uploadPath = FCPATH . 'image/';
-
-            // Generate a unique filename
             $newName = $image->getRandomName();
+            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
 
-            // Set allowed image types
-            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg']; // Add more if needed
-
-            // Check if the uploaded file is an allowed image type
             if (in_array($image->getClientExtension(), $allowedTypes)) {
-                // Move the uploaded image to the upload directory
                 $image->move($uploadPath, $newName);
-
-                // Save the image URL (relative to base URL) to the data array
-                $data['image'] = 'image/' . $newName; // Adjust the path as needed
+                $data['image'] = 'image/' . $newName;
             } else {
-                // Handle invalid image type (e.g., show an error message)
                 return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
             }
         }
 
-        // Update the existing record
         $this->productModel->set($data)->where('id', $id)->update();
 
         return redirect()->to('/data_table');

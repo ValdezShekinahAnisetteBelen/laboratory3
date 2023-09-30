@@ -24,6 +24,22 @@
         .orange-btn:hover {
             background-color: darkorange;
         }
+        .anisette-button {
+        background-color: orange;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .anisette-button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .anisette-button:hover {
+        background-color: greenyellow;
+    }
     </style>
 </head>
 <body class="home-1">
@@ -121,7 +137,13 @@
     <section class="section-tb-padding">
         <div class="container">
             <div class="row">
-                <div class="col">
+            <div class="col">
+                    <button class="anisette-button">
+                        <a href="/anisette">
+                            <i class="fa fa-shopping-cart"></i> Window Shopping at Anisette Pure Living
+                        </a>
+                    </button>
+                </div>
                     <div class="login-area">
                         <div class="login-box">
                             <?php if (session()->getFlashdata('msg')): ?>

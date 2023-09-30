@@ -24,7 +24,7 @@ class Home extends BaseController
         $data = [
             'products' => $this->product1->findAll()
         ];
-        return view('welcome_message', $data);
+        return view('anisette', $data);
         
         //'name','description','image','price','category','quantity'
     }

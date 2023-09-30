@@ -94,8 +94,8 @@
                                                 <div class="user-info">
                                                     <span class="acc-title">Account</span>
                                                     <div class="account-login">
-                                                        <a href="register.html">Register</a>
-                                                        <a href="login.html">Log in</a>
+                                                        <a href="/register">Register</a>
+                                                        <a href="/login">Log in</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +127,7 @@
                                                     <ul class="main-menu">
                                                         <li class="menu-link parent">
                                                                <!--HOME-->
-                                                            <a href="/welcome_message" class="link-title">
+                                                            <a href="/anisette" class="link-title">
                                                                 <span class="sp-link-title">Home</span>
                                                             </a>
                                                                 <!---->

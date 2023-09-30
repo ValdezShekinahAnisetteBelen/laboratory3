@@ -62,13 +62,14 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #fff;
+            color: #000;
         }
+      
 
         /* Style for the banner headings */
-        .banner-text h1, .banner-text span {
+        .banner-text h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 50px;
         }
 
         /* Style for the banner button */
@@ -90,6 +91,7 @@
                     <img class="banner-img" src="image/slider3.svg" alt="Banner Image">
                     <div class="banner-text">
                         <span>Top selling!</span>
+                    
                         <h1>Fresh for your health</h1>
                         <a href="grid-list.html" class="btn btn-style1">Shop now</a>
                     </div>

@@ -6,7 +6,7 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<title>Directory</title>
+<title>Anisette Pure Living</title>
 <link rel="icon" href="<?= base_url() ?>admin/img/logo.png" type="image/png">
 
 <link rel="stylesheet" href="<?= base_url() ?>admin/css/bootstrap1.min.css" />

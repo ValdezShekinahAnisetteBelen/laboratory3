@@ -13,10 +13,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Anisette Pure Living</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<style>
+    /* White text color and green background for the Edit button */
+    .btn-success.text-white {
+        color: white;
+        background-color: green;
+    }
+
+    /* White text color and red background for the Delete button */
+    .btn-danger.text-white {
+        color: white;
+        background-color: orange;
+    }
+</style>
 
 <body>
 
@@ -85,7 +98,6 @@
                             <div class="form-group">
                                 <label>Image</label>
                                 <input type="file" class="form-control" name="image">
-                                
                             </div>
                             
                             <div class="form-group">
@@ -135,14 +147,17 @@
         <td><?= $product['id'] ?></td>
         <td><?= $product['name'] ?></td>
         <td><?= $product['description'] ?></td>
-        <td><img src="<?= base_url('uploads/' . $product['image']) ?>" alt="image" width="100"></td>
-        <!-- Use 'uploads/' instead of 'image/' -->
+        <td data-image="<?= base_url('image/') ?>"></td>
         <td><?= '$' . number_format($product['price'], 2) ?></td>
         <td><?= $product['category'] ?></td>
         <td><?= $product['quantity'] ?></td>
         <td>
-    <a class="btn btn-danger" href="/delete/<?= esc($product['id']) ?>">Delete</a>
-    <button class="btn btn-success edit-product" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
+    <!-- Edit button with custom CSS classes -->
+            <button class="btn btn-success edit-product text-white" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
+
+            <!-- Delete button with custom CSS classes -->
+            <a class="btn btn-danger text-white" href="/delete/<?= esc($product['id']) ?>">Delete</a>
+
 </td>
 <?php endforeach; ?>
 
@@ -161,7 +176,7 @@
             </div>
             <div class="modal-body">
                 <!-- Add a form to edit the product details here -->
-                <form action="/edit" method="post" enctype="multipart/form-data">
+                <form action="/editProduct" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" id="editProductId">
                     <div class="form-group">
                         <label for="editName">Name</label>
@@ -205,8 +220,24 @@
 <script>
     $(document).ready(function () {
         $('#product-table').DataTable();
+
+        // Loop through each table row
+        $('#product-table tbody tr').each(function () {
+            // Get the data-image attribute from the parent <td>
+            var imagePath = $(this).find('td[data-image]').data('image');
+
+            // Get the image file name from the current row's data
+            var imageName = $(this).find('td:eq(3)').text(); // Assuming image path is in the 3rd column
+
+            // Construct the full image URL
+            var imageUrl = imagePath + imageName;
+
+            // Find the <td> containing the image and update its content
+            $(this).find('td:eq(3)').html('<img src="' + imageUrl + '" alt="image" width="100">');
+        });
     });
 </script>
+
 
 <script>
   $(document).ready(function () {

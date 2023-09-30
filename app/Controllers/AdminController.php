@@ -69,30 +69,30 @@ public function getProductInfo()
             ];
         
             // Handle image upload
-            $image = $this->request->getFile('image');
+           // Handle image upload
+           $image = $this->request->getFile('image');
         
-            if ($image->isValid() && !$image->hasMoved()) {
-                // Define the upload directory
-                            // Define the upload directory using base URL
-                            $uploadPath = FCPATH . 'uploads/'; // Assuming your images are stored in the 'image' directory under the base URL
-
-                // Generate a unique filename
-                $newName = $image->getRandomName();
-
-                // Set allowed image types
-                $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg']; // Add more if needed
-
-                // Check if the uploaded file is an allowed image type
-                if (in_array($image->getClientExtension(), $allowedTypes)) {
-                    // Move the uploaded image to the upload directory
-                    $image->move($uploadPath, $newName);
-
-                    // Save the image URL (relative to base URL) to the data array
-                    $data['image'] = 'image/' . $newName; // Adjust the path as needed
-                } else {
-                    // Handle invalid image type (e.g., show an error message)
-                    return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
-                }
+           if ($image->isValid() && !$image->hasMoved()) {
+               // Define the upload directory
+               $uploadPath = FCPATH . 'image/';
+       
+               // Generate a unique filename
+               $newName = $image->getRandomName();
+       
+               // Set allowed image types
+               $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg']; // Add more if needed
+       
+               // Check if the uploaded file is an allowed image type
+               if (in_array($image->getClientExtension(), $allowedTypes)) {
+                   // Move the uploaded image to the upload directory
+                   $image->move($uploadPath, $newName);
+       
+                   // Save the image URL (relative to base URL) to the data array
+                   $data['image'] = 'image/' . $newName; // Adjust the path as needed
+               } else {
+                   // Handle invalid image type (e.g., show an error message)
+                   return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
+               }
 
             }
         
@@ -136,7 +136,7 @@ public function getProductInfo()
         
             if ($image->isValid() && !$image->hasMoved()) {
                 // Define the upload directory
-                $uploadPath = FCPATH . 'uploads/';
+                $uploadPath = FCPATH . 'image/';
         
                 // Generate a unique filename
                 $newName = $image->getRandomName();
@@ -150,7 +150,7 @@ public function getProductInfo()
                     $image->move($uploadPath, $newName);
         
                     // Save the image URL (relative to base URL) to the data array
-                    $data['image'] = 'uploads/' . $newName; // Adjust the path as needed
+                    $data['image'] = 'image/' . $newName; // Adjust the path as needed
                 } else {
                     // Handle invalid image type (e.g., show an error message)
                     return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
@@ -163,10 +163,18 @@ public function getProductInfo()
             return redirect()->to('/data_table');
         }
         
+        
         public function login()
             {
                 $data['products'] = $this->product->findAll();
                 return view('admin/include/login', $data);
-            }       
+            }      
+            
+             
+        public function register()
+        {
+            $data['products'] = $this->product->findAll();
+            return view('admin/include/register', $data);
+        }       
                 
 }

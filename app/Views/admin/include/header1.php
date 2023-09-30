@@ -53,6 +53,9 @@
         .active .submenu {
             display: block;
         }
+        #sidebar_menu li.mm-active a.has-arrow {
+        background-color: greenyellow;
+    }
     </style>
 </head>
 <body class="crm_body_bg">

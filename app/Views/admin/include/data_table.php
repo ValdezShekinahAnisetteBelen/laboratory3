@@ -68,6 +68,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header"></div>
                                         <div class="modal-body">
+                                            
                                             <form action="/save" method="post" class="form-border" enctype="multipart/form-data">
                                                 <h2>Product Form</h2>
                                                 <div class="form-group">

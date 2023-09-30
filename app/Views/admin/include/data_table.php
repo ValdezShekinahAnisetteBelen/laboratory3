@@ -34,7 +34,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="dashboard_breadcam text-end">
-                                    <p><a href="index-2.html">Dashboard</a> <i class="fas fa-caret-right"></i> Data
+                                    <p><a href="/admins">Home</a> <i class="fas fa-caret-right"></i> Data
                                         Table</p>
                                 </div>
                             </div>
@@ -44,52 +44,162 @@
                 <div class="col-12">
                     <div class="QA_section">
                         <div class="white_box_tittle list_header">
-                            <h4>Table</h4>
+                            <h4></h4>
                             <div class="box_right d-flex lms_block">
                                 <div class="serach_field_2">
                                     <div class="search_inner">
-                                        <form Active="#">
+                                      
                                             <div class="search_field">
-                                                <input type="text" placeholder="Search content here...">
+                                            <input type="hidden">
                                             </div>
-                                            <button type="submit"> <i class="ti-search"></i> </button>
-                                        </form>
+                                   
                                     </div>
                                 </div>
                                 <div class="add_button ms-2">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#addcategory"
-                                        class="btn_1">Add New</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#memod"
+                                        class="btn_1"> + Create or Add New Products</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="QA_table mb_30">
-                        <table id="product-table" class="table lms_table_active">
+                <!-- Product Form -->
+             <div class="modal fade" id="memod" tabindex="-1" aria-labelledby="memodLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- Modal title and close button -->
+                            </div>
+                            <div class="modal-body">
+                            <form action="/save" method="post" class="form-border" enctype="multipart/form-data">
+                            <h2>Product Form</h2>
+                            <div class="form-group">
+                                <input type="hidden" name="id" value="<?= isset($pro['id']) ? $pro['id'] : '' ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>name</label>
+                                <input type="text" class="form-control" name="name" placeholder="name" value="<?= isset($pro['name']) ? $pro['name'] : '' ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>description</label>
+                                <input type="text" class="form-control" name="description" placeholder="description" value="<?= isset($pro['description']) ? $pro['description'] : '' ?>">
+                            </div>
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input type="file" class="form-control" name="image">
+                                
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>price</label>
+                                <input type="number" step="0.01" class="form-control" name="price" placeholder="price" value="<?= isset($pro['price']) ? $pro['price'] : '' ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <label>category</label>
+                                <input type="text" class="form-control" name="category" placeholder="category" value="<?= isset($pro['category']) ? $pro['category'] : '' ?>">
+                            </div>
+
+                            <div class="form-group">
+                                <label>quantity</label>
+                                <input type="number" step="0.01" class="form-control" name="quantity" placeholder="quantity" value="<?= isset($pro['quantity']) ? $pro['quantity'] : '' ?>">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Save Product">
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <div class="QA_table mb_30">
+ <table id="product-table" class="table lms_table_active">
     <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Description</th>
+            <th scope="col">description</th>
             <th scope="col">Image</th>
             <th scope="col">Price</th>
             <th scope="col">Category</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
         <!-- Loop through the products and populate the table rows -->
         <?php foreach ($products as $product): ?>
-            <tr>
-                <td><?= $product['id'] ?></td>
-                <td><?= $product['name'] ?></td>
-                <td><?= $product['description'] ?></td>
-                <td><img src="<?= $product['image'] ?>" alt="Product Image" width="100"></td>
-                <td><?= '$' . number_format($product['price'], 2) ?></td>
-                <td><?= $product['category'] ?></td>
-                <td><?= $product['quantity'] ?></td>
-            </tr>
-        <?php endforeach; ?>
+    <tr>
+        <td><?= $product['id'] ?></td>
+        <td><?= $product['name'] ?></td>
+        <td><?= $product['description'] ?></td>
+        <td><img src="<?= base_url('uploads/' . $product['image']) ?>" alt="image" width="100"></td>
+        <!-- Use 'uploads/' instead of 'image/' -->
+        <td><?= '$' . number_format($product['price'], 2) ?></td>
+        <td><?= $product['category'] ?></td>
+        <td><?= $product['quantity'] ?></td>
+        <td>
+    <a class="btn btn-danger" href="/delete/<?= esc($product['id']) ?>">Delete</a>
+    <button class="btn btn-success edit-product" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
+</td>
+<?php endforeach; ?>
+
     </tbody>
 </table>
+
+<!-- Edit Product Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Add a form to edit the product details here -->
+                <form action="/edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" id="editProductId">
+                    <div class="form-group">
+                        <label for="editName">Name</label>
+                        <input type="text" class="form-control" id="editName" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">Description</label>
+                        <input type="text" class="form-control" id="editDescription" name="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="editImage">Image</label>
+                        <input type="file" class="form-control" id="editImage" name="image">
+                    </div>
+                    <!-- Display the current image -->
+                    <div class="form-group">
+                        <label for="currentImage">Current Image</label>
+                        <img id="currentImage" src="" alt="Current Image" width="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="editPrice">Price</label>
+                        <input type="number" step="0.01" class="form-control" id="editPrice" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="editCategory">Category</label>
+                        <input type="text" class="form-control" id="editCategory" name="category">
+                    </div>
+                    <div class="form-group">
+                        <label for="editQuantity">Quantity</label>
+                        <input type="number" step="1" class="form-control" id="editQuantity" name="quantity">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Initialize the DataTable -->
 <script>
@@ -97,3 +207,38 @@
         $('#product-table').DataTable();
     });
 </script>
+
+<script>
+  $(document).ready(function () {
+    // Handle click event for the "Edit" button
+    $('.edit-product').click(function () {
+        // Get the product ID from the data attribute
+        var productId = $(this).data('product-id');
+
+        // Fetch the product details via AJAX and populate the modal fields
+        $.ajax({
+            url: '/getProductInfo', // Create a route for this action
+            method: 'post',
+            data: { id: productId },
+            dataType: 'json',
+            success: function (data) {
+                if (data) {
+                    $('#editProductId').val(data.id);
+                    $('#editName').val(data.name);
+                    $('#editDescription').val(data.description);
+
+                    // Set the src attribute of the current image
+                    $('#currentImage').attr('src', data.image);
+
+                    $('#editPrice').val(data.price);
+                    $('#editCategory').val(data.category);
+                    $('#editQuantity').val(data.quantity);
+                    // Populate other fields as needed
+                }
+            }
+        });
+    });
+});
+
+</script>
+

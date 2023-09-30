@@ -83,7 +83,6 @@
 
 </head>
 
-
             <!-- Main Content -->
             <main role="main" class="col-md-11 ml-sm-auto col-lg-10 px-md-7 main_content">
                 <!-- Banner section -->

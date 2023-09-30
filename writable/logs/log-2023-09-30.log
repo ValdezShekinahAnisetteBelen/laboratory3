@@ -650,3 +650,110 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
 10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 13:35:57 --> Undefined variable $product
+in APPPATH\Views\admin\include\data_table.php on line 87.
+ 1 APPPATH\Views\admin\include\data_table.php(87): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php', 87)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/include/data_table', [], true)
+ 5 APPPATH\Controllers\AdminController.php(43): view('admin/include/data_table', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->data_table()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 13:36:28 --> Undefined variable $product
+in APPPATH\Views\admin\include\data_table.php on line 88.
+ 1 APPPATH\Views\admin\include\data_table.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $product', 'C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php', 88)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/include/data_table', [], true)
+ 5 APPPATH\Controllers\AdminController.php(43): view('admin/include/data_table', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->data_table()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:08:43 --> fopen(http://localhost:8080/image/index.html): Failed to open stream: HTTP wrapper does not support writeable connections
+in SYSTEMPATH\HTTP\Files\UploadedFile.php on line 188.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(http://localhost:8080/image/index.html): Failed to open stream: HTTP wrapper does not support writeable connections', 'C:\\laragon\\www\\laboratory3\\system\\HTTP\\Files\\UploadedFile.php', 188)
+ 2 SYSTEMPATH\HTTP\Files\UploadedFile.php(188): fopen('http://localhost:8080/image/index.html', 'x+b')
+ 3 SYSTEMPATH\HTTP\Files\UploadedFile.php(139): CodeIgniter\HTTP\Files\UploadedFile->setPath('http://localhost:8080/image/')
+ 4 APPPATH\Controllers\AdminController.php(87): CodeIgniter\HTTP\Files\UploadedFile->move('http://localhost:8080/image/', '1696082923_07eff59e7d5dbc7b63c6.jpg')
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->save()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:19:28 --> Undefined variable $pr
+in APPPATH\Views\admin\include\data_table.php on line 142.
+ 1 APPPATH\Views\admin\include\data_table.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pr', 'C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php', 142)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/include/data_table', [], true)
+ 5 APPPATH\Controllers\AdminController.php(43): view('admin/include/data_table', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->data_table()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:24:59 --> Undefined variable $pr
+in APPPATH\Views\admin\include\data_table.php on line 143.
+ 1 APPPATH\Views\admin\include\data_table.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pr', 'C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php', 143)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\data_table.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/include/data_table', [], true)
+ 5 APPPATH\Controllers\AdminController.php(43): view('admin/include/data_table', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->data_table()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:29:02 --> Invalid file: "products.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 3 APPPATH\Controllers\AdminController.php(122): view('products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->edit('3')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:30:04 --> Invalid file: "products.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('products.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('products', [], true)
+ 3 APPPATH\Controllers\AdminController.php(120): view('products', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->edit('2')
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:39:45 --> Call to a member function isValid() on null
+in APPPATH\Controllers\AdminController.php on line 138.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:39:56 --> Call to a member function isValid() on null
+in APPPATH\Controllers\AdminController.php on line 138.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:45:13 --> Call to a member function isValid() on null
+in APPPATH\Controllers\AdminController.php on line 138.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-09-30 14:47:51 --> Call to a member function isValid() on null
+in APPPATH\Controllers\AdminController.php on line 126.
+ 1 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->update()
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 3 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')

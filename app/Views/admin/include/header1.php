@@ -90,6 +90,15 @@
                 </ul>
             </li>
             <!-- Add more menu items here -->
+            <li class="mm-active">
+                <a class="has-arrow" href="#" aria-expanded="false" data-toggle="collapse" data-target="#SettingSubMenu">
+                    <img src="admin/img/menu-icon/dashboard.svg" alt>
+                    <span>Settings</span>
+                </a>
+                <ul class="submenu" id="SettingSubMenu">
+                    <li><a href="/login">Log Out</a></li>
+                </ul>
+                </li>
         </ul>
     </nav>
 

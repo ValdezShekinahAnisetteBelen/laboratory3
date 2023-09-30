@@ -162,19 +162,6 @@ public function getProductInfo()
         
             return redirect()->to('/data_table');
         }
-        
-        
-        public function login()
-            {
-                $data['products'] = $this->product->findAll();
-                return view('admin/include/login', $data);
-            }      
-            
-             
-        public function register()
-        {
-            $data['products'] = $this->product->findAll();
-            return view('admin/include/register', $data);
-        }       
+          
                 
 }

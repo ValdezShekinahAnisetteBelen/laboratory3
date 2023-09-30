@@ -3,89 +3,131 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use App\Models\UserModel; // Import the UserModel
 
 class UserController extends BaseController
 {
+    public $filters = ['AdminFilter'];
+    private $user;
+    // public function index()
+    // {
+    //     return view('index');
+    // }
+    public function __construct()
+    {
+        $this->user = new \App\Models\UserModel();
+    }
+    public function register()
+    {
+        return view('register');
+    }
+    public function registration()
+    {
+        helper(['form']);
+
+        // Define validation rules
+        $rules = [
+            'username' => 'required|min_length[4]|max_length[100]|is_unique[authenticate.username]',
+            'email' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[authenticate.email]',
+            'password' => 'required|min_length[4]|max_length[50]',
+            'confirmpassword' => 'matches[password]'
+        ];
+
+        // Check if the form data passes validation
+        if ($this->validate($rules)) {
+
+            // Prepare data for insertion into the database
+            $data = [
+                'username' => $this->request->getVar('username'),
+                'email' => $this->request->getVar('email'),
+                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+            ];
+
+            // Insert the user data into the database
+            $this->user->insert($data);
+
+            // Redirect to the signin page on successful registration
+            return redirect()->to('login');
+        } else {
+            // If validation fails, display errors and the registration form again
+            $data['validation'] = $this->validator;
+            return view('register', $data);
+        }
+    }
+
     public function login()
     {
         helper(['form']);
-        echo view('admin/include/login');
-    }
-
-    public function register()
-    {
-        helper(['form']);
-
-        // Create an instance of the UserModel
-        $userModel = new UserModel();
-
-        // Initialize the data array to hold any view data
-        $data = [];
-
-        // Check if the form has been submitted
-        if ($this->request->getMethod() === 'post') {
-            // Define validation rules
-            $rules = [
-                'username' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.username]', // Changed 'users.email' to 'users.username'
-                'password' => 'required|min_length[4]|max_length[50]',
-                'confirmpassword' => 'matches[password]'
-            ];
-
-            // Validate the user input against the rules
-            if ($this->validate($rules)) {
-                // Prepare the data to be inserted into the database
-                $data = [
-                    'username' => $this->request->getVar('username'),
-                    'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
-                ];
-
-                // Save the user data to the database
-                $userModel->insert($data);
-
-                // Redirect to the login page
-                return redirect()->to('/admin/include/login');
-            } else {
-                // Validation failed, store validation errors in the data array
-                $data['validation'] = $this->validator;
-            }
-        }
-
-        // Load the signup view with data (validation errors, if any)
-        echo view('register', $data);
+        return view('login'); // Display the login form view
     }
 
     public function loginAuth()
-{
-    $session = session();
-    $userModel = new UserModel();
-    $username = $this->request->getVar('username');
-    $password = $this->request->getVar('password');
+    {
+        // Start a new session
+        $session = session();
 
-    $data = $userModel->where('username', $username)->first();
+        // Get the username or email and password from the request
+        $usernameOrEmail = $this->request->getVar('usernameOrEmail');
+        $password = $this->request->getVar('password');
 
-    if ($data) {
-        $storedPassword = $data['password'];
-        $authenticatePassword = password_verify($password, $storedPassword);
+        // Attempt to retrieve a user record by username or email
+        $data = $this->user
+            ->where('username', $usernameOrEmail) // Check if Username matches
+            ->orWhere('email', $usernameOrEmail) // OR check if Email matches
+            ->first();
 
-        if ($authenticatePassword) {
-            $ses_data = [
-                'id' => $data['id'],
-                'username' => $data['username'],
-                'isLoggedIn' => true
-            ];
+        if ($data) {
+            // If a user with the provided username or email exists
 
-            $session->set($ses_data);
+            $hashedPassword = $data['password'];
 
-            return redirect()->to('/profile');
+            // Verify the entered password against the hashed password
+            $authenticatePassword = password_verify($password, $hashedPassword);
+
+            if ($authenticatePassword) {
+                // If the password is correct
+
+                // Create session data
+                $ses_data = [
+                    'id' => $data['id'],
+                    'username' => $data['username'],
+                    'role' => $data['role'],
+                    'isLoggedIn' => true
+                ];
+
+                // Set session data
+                $session->set($ses_data);
+                // Redirect based on the user's role
+                if ($data['role'] === 'admin') {
+                    return redirect()->to(base_url('admins'));
+
+                } else {
+                    return redirect()->to('');
+                }
+            } else {
+                // If the password is incorrect, display an error message
+                $session->setFlashdata('msg', 'Email or Password is incorrect.');
+                return redirect()->to('login');
+            }
         } else {
-            $session->setFlashdata('msg', 'Password is incorrect.');
-            return redirect()->to('/admin/include/login'); // Changed to '/login'
+            // If no user with the provided username or email exists, display an error message
+            $session->setFlashdata('msg', 'Email does not exist.');
+            return redirect()->to('login');
         }
-    } else {
-        $session->setFlashdata('msg', 'Username does not exist.');
-        return redirect()->to('/admin/include/login'); // Changed to '/login'
     }
-}
+    protected function isLoggedIn()
+    {
+        // Check if the user is authenticated based on your authentication logic
+        // For example, you can check if a user session variable exists
+        return session()->has('UserID'); // Adjust this logic based on your implementation
+    }
+    public function logout()
+    {
+        // Destroy all session data
+        session()->destroy();
+
+        // Redirect the user to the desired page (e.g., the login page)
+        return redirect()->to('login'); // Adjust the URL as needed
+    }
+
 
 }

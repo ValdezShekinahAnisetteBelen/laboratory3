@@ -6,7 +6,7 @@ use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class Filters implements FilterInterface
+class AuthGuard implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.
@@ -25,7 +25,9 @@ class Filters implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        //
+        if (!session()->get("isLoggedIn")) {
+            return redirect()->to('login');
+        }
     }
 
     /**

@@ -92,10 +92,10 @@
                                                     </a>
                                                 </div>
                                                 <div class="user-info">
-                                                    <span class="acc-title">Account</span>
+                                                    <span class="acc-title">Hi User!</span>
                                                     <div class="account-login">
-                                                        <a href="/register">Register</a>
-                                                        <a href="/login">Log in</a>
+                                                        <a href="/logout">Log Out</a>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>

@@ -1,4 +1,4 @@
-<?= $this->include('admin/include/top3') ?>
+<?= $this->include('admin/include/top4') ?>
 
 <body class="home-1">
     <!-- top notificationbar start -->
@@ -13,55 +13,55 @@
                                 <span class="currency-head">currency:</span>
                                 <div class="currency-drop">
                                     <div class="eur">
-                                        <img class="img-fluid" src="<?=base_url()?>image/c-icon1.png" alt="">
+                                        <img class="img-fluid" src="<?= base_url() ?>image/c-icon1.png" alt="">
                                         <span class="cur-name">EUR</span>
                                     </div>
                                     <ul class="all-currency">
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon4.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon4.png" alt="">
                                                 <span class="cur-name">AFN</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon2.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon2.png" alt="">
                                                 <span class="cur-name">BDT</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon3.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon3.png" alt="">
                                                 <span class="cur-name">CAD</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon1.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon1.png" alt="">
                                                 <span class="cur-name">EUR</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon5.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon5.png" alt="">
                                                 <span class="cur-name">GBP</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon6.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon6.png" alt="">
                                                 <span class="cur-name">INR</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon7.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon7.png" alt="">
                                                 <span class="cur-name">SAR</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0)">
-                                                <img class="img-fluid" src="<?=base_url()?>image/c-icon8.png" alt="">
+                                                <img class="img-fluid" src="<?= base_url() ?>image/c-icon8.png" alt="">
                                                 <span class="cur-name">USD</span>
                                             </a>
                                         </li>
@@ -69,24 +69,6 @@
                                 </div>
                             </div>
                             <!-- currency end -->
-                            <!-- mobile search start -->
-                            <div class="r-search">
-                                <a href="#r-search-modal" class="search-popuup" data-bs-toggle="modal"><i class="fa fa-search"></i></a>
-                                <div class="modal fade" id="r-search-modal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <div class="m-drop-search">
-                                                    <input type="text" name="search" placeholder="Search products, brands or advice">
-                                                    <a href="search.html" class="search-btn"><i class="fa fa-search"></i></a>
-                                                </div>
-                                                <button type="button" class="close" data-bs-dismiss="modal"><i class="ion-close-round"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- mobile search end -->
                         </li>
                         <li class="top-home-li t-content">
                             <!-- offer text start -->
@@ -102,36 +84,6 @@
     </section>
     <!-- top notificationbar end -->
 
-
-        <!-- mobile menu start -->
-        <div class="header-bottom-area mobile">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="main-menu-area">
-                            <div class="main-navigation navbar-expand-xl">
-                                <div class="box-header menu-close">
-                                    <button class="close-box" type="button"><i class="ion-close-round"></i></button>
-                                </div>
-                           
-                                <!-- menu end -->
-                                <div class="img-hotline">
-                                    <div class="image-line">
-                                        <a href="javascript:void(0)"><img src="<?=base_url()?>image/icon_contact.png" class="img-fluid" alt="image-icon"></a>
-                                    </div>
-                                    <div class="image-content">
-                                        <span class="hot-l">Hotline:</span>
-                                        <span>0123 456 789</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- mobile menu end -->
-        
     <!-- breadcrumb start -->
     <section class="about-breadcrumb">
         <div class="about-back section-tb-padding" style="background-image: url(image/about-image.jpg)">
@@ -140,8 +92,7 @@
                     <div class="col">
                         <div class="about-l">
                             <ul class="about-link">
-                                
-                                <li class="about-p"><span>Login</span></li>
+                                <li class="about-p"><span>Register</span></li>
                             </ul>
                         </div>
                     </div>
@@ -155,23 +106,62 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="login-area">
-                        <div class="login-box">
-                            <h1>Login</h1>
-                            <p>Please login below account detail</p>
-                            <form>
-                                <label>Email address</label>
-                                <input type="text" name="email" placeholder="Email address">
-                                <label>Password</label>
-                                <input type="text" name="password" placeholder="Password">
-                                <a href="login.html" class="btn-style1">Sign in</a>
-                                <a href="forgot-password.html" class="re-password">Forgot your password?</a>
-                            </form>
+                    <div class="register-area">
+                        <div class="register-box">
+                            <h1>Create account</h1>
+                            <p>Please register below account detail</p>
+                            
+                            <div class="container mt-5">
+                                <div class="row justify-content-md-center">
+                                    <div class="col-5">
+                                        <h2>Create Account</h2>
+                                        <!-- Display validation errors if any -->
+                                <?php if (isset($validation)): ?>
+                                    <div class="alert alert-danger">
+                                    <ul>
+                                        <?php foreach ($validation->getErrors() as $error): ?>
+                                        <li>
+                                            <?= esc($error) ?>
+                                        </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    </div>
+                                <?php endif; ?>
+                                <form action="<?= base_url() ?>registration" method="post">
+                                 <div class="input-box">
+                                    <div class="single-input-fields">
+                                        <label>Username</label>
+                                        <input type="text" name="username" placeholder="Enter full name" value="<?= old('name') ?>"
+                                        class="form-control" required>
+                                    </div>
+                                    <div class="single-input-fields">
+                                        <label>Email Address</label>
+                                        <input type="email" name="email" placeholder="Enter email address" value="<?= old('email') ?>"
+                                        class="form-control" required>
+                                    </div>
+                                    <div class="single-input-fields">
+                                        <label>Password</label>
+                                        <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
+                                    </div>
+                                    <div class="single-input-fields">
+                                        <label>Confirm Password</label>
+                                        <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control"
+                                        required>
+                                    </div>
+                                    </div>
+                                    <div class="register-footer">
+
+                                    <button type="submit" class="submit-btn3">Sign Up</button>
+                                    </div>
+                                </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="login-account">
-                            <h4>Don't have an account?</h4>
-                            <a href="/register" class="ceate-a">Create account</a>
-                            <div class="login-info">
+                        <div class="register-account">
+                            <h4>Already an account holder?</h4>
+                           <a href="<?= base_url() ?>login"> Login</a>
+                            <div class="register-info">
                                 <a href="terms-conditions.html" class="terms-link"><span>*</span> Terms & conditions.</a>
                                 <p>Your privacy and security are important to us. For more information on how we use your data read our <a href="privacy-policy.html">privacy policy</a></p>
                             </div>
@@ -211,7 +201,7 @@
                         <ul class="footer-ul">
                             <li class="footer-li footer-logo">
                                 <a href="index1.html">
-                                    <img class="img-fluid" src="<?=base_url()?>image/logo1.png" alt="">
+                                    <img class="img-fluid" src="<?= base_url() ?>image/logo1.png" alt="">
                                 </a>
                             </li>
                             <li class="footer-li footer-address">
@@ -221,8 +211,7 @@
                                     </li>
                                     <li class="footer-info">
                                         <h6>Address</h6>
-                                        <span>401 Broadway 24th floor
-</span>
+                                        <span>401 Broadway 24th floor</span>
                                         <span>Near ant mall cross road</span>
                                     </li>
                                 </ul>
@@ -336,7 +325,7 @@
                             <a href="https://www.youtube.com/" class="f-icn-link"><i class="fa fa-youtube"></i></a>
                         </li>
                         <li class="f-c f-payment">
-                            <a href="checkout-1.html"><img src="<?=base_url()?>image/payment.png" class="img-fluid" alt="payment image"></a>
+                            <a href="checkout-1.html"><img src="<?= base_url() ?>image/payment.png" class="img-fluid" alt="payment image"></a>
                         </li>
                     </ul>
                 </div>
@@ -350,23 +339,8 @@
     </a>
     <!-- back to top end -->
     <div class="mm-fullscreen-bg"></div>
-  
+    <!-- jquery -->
 </body>
 
-  <!-- jquery -->
-  <script src="<?base_url()?>js/modernizr-2.8.3.min.js"></script>
-    <script src="<?base_url()?>js/jquery-3.6.0.min.js"></script>
-    <!-- bootstrap -->
-    <script src="<?base_url()?>js/bootstrap.min.js"></script>
-    <!-- popper -->
-    <script src="<?base_url()?>js/popper.min.js"></script>
-    <!-- fontawesome -->
-    <script src="<?base_url()?>js/fontawesome.min.js"></script>
-    <!-- owl carousal -->
-    <script src="<?base_url()?>js/owl.carousel.min.js"></script>
-    <!-- swiper -->
-    <script src="<?base_url()?>js/swiper.min.js"></script>
-    <!-- custom -->
-    <script src="<?base_url()?>js/custom.js"></script>
-<!-- Mirrored from spacingtech.com/html/vegist-final/vegist/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Sep 2023 12:13:47 GMT -->
+<!-- Mirrored from spacingtech.com/html/vegist-final/vegist/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Sep 2023 12:13:47 GMT -->
 </html>

@@ -99,7 +99,7 @@
                     <span>Settings</span>
                 </a>
                 <ul class="submenu" id="SettingSubMenu">
-                    <li><a href="/login">Log Out</a></li>
+                    <li><a href="/logout">Log Out</a></li>
                 </ul>
                 </li>
         </ul>

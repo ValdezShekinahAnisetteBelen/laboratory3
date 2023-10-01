@@ -226,30 +226,38 @@ tr.colored-border {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
    
+    
 
     <script>
-        $(document).ready(function () {
-            $('.edit-product').click(function () {
-                var productId = $(this).data('product-id');
-                $.ajax({
-                    url: '/getProductInfo',
-                    method: 'post',
-                    data: { id: productId },
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data) {
-                            $('#editProductId').val(data.id);
-                            $('#editName').val(data.name);
-                            $('#editDescription').val(data.description);
-                            $('#currentImage').attr('src', data.image);
-                            $('#editPrice').val(data.price);
-                            $('#editCategory').val(data.category);
-                            $('#editQuantity').val(data.quantity);
-                        }
+    $(document).ready(function () {
+        // Initialize DataTable with pagination
+        $('#product-table').DataTable({
+            "paging": true,  // Enable pagination
+            "lengthChange": false, // Disable the option to change the number of records displayed per page
+        });
+
+        // Rest of your JavaScript code
+        $('.edit-product').click(function () {
+            var productId = $(this).data('product-id');
+            $.ajax({
+                url: '/getProductInfo',
+                method: 'post',
+                data: { id: productId },
+                dataType: 'json',
+                success: function (data) {
+                    if (data) {
+                        $('#editProductId').val(data.id);
+                        $('#editName').val(data.name);
+                        $('#editDescription').val(data.description);
+                        $('#currentImage').attr('src', data.image);
+                        $('#editPrice').val(data.price);
+                        $('#editCategory').val(data.category);
+                        $('#editQuantity').val(data.quantity);
                     }
-                });
+                }
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>

@@ -1,9 +1,7 @@
 <?= $this->include('admin/include/top4') ?>
 
-
 <body class="home-1">
 <style>
-   
    .single-input-fields input {
        width: 100%; 
    }
@@ -131,7 +129,7 @@
                             <p>Please register below account detail</p>
                             <div class="container mt-5">
                                 <div class="row justify-content-md-center">
-                                    <div class="col-5">
+                                    <div class="col-50">
                                        
                                         <?php if (isset($validation)): ?>
                                             <div class="alert alert-danger">
@@ -146,19 +144,20 @@
                                             <div class="input-box">
                                                 <div class="single-input-fields">
                                                     <label>Username</label>
-                                                    <input type="text" name="username" placeholder="Enter full name" value="<?= old('name') ?>" class="form-control" required>
+                                                    <input type="text" name="username" placeholder="Enter full name" value="<?= old('name') ?>" class="form-control" style="width: 80%; max-width: 100%;" required>
                                                 </div>
                                                 <div class="single-input-fields">
                                                     <label>Email Address</label>
-                                                    <input type="email" name="email" placeholder="Enter email address" value="<?= old('email') ?>" class="form-control" required>
+                                                    <input type="email" name="email" placeholder="Enter email address" value="<?= old('email') ?>" class="form-control" style="width: 80%; max-width: 100%;" required>
                                                 </div>
+                                                
                                                 <div class="single-input-fields">
                                                     <label>Password</label>
-                                                    <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
+                                                    <input type="password" name="password" placeholder="Enter Password" class="form-control" style="width: 80%; max-width: 100%;" required>
                                                 </div>
                                                 <div class="single-input-fields">
                                                     <label>Confirm Password</label>
-                                                    <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" required>
+                                                    <input type="password" name="confirmpassword" placeholder="Confirm Password" class="form-control" style="width: 80%; max-width: 100%;" required>
                                                 </div>
                                             </div>
                                             <div class="register-footer">
@@ -211,7 +210,7 @@
                         <ul class="footer-ul">
                             <li class="footer-li footer-logo">
                                 <a href="index1.html">
-                                    <img class="img-fluid" src="<?= base_url() ?>image/logo1.png" alt="">
+                                    <img class="img-fluid" src="<?= base_url() ?>image/logo1.svg" alt="">
                                 </a>
                             </li>
                             <li class="footer-li footer-address">
@@ -261,11 +260,11 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="f-link-ul collapse" id="t-cate" data-bs-parent="#footer-accordian">
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Fruits</a></li>
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Fast foods</a></li>
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Vegetable</a></li>
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Salads</a></li>
-                                    <li class="f-link-ul-li"><a href="grid-list.html">Bestseller</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Fruits</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Fast foods</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Vegetable</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Salads</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Bestseller</a></li>
                                 </ul>
                             </div>
                             <div class="f-link">
@@ -289,11 +288,11 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="f-link-ul collapse" id="privacy" data-bs-parent="#footer-accordian">
-                                    <li class="f-link-ul-li"><a href="payment-policy.html">Payment policy</a></li>
-                                    <li class="f-link-ul-li"><a href="privacy-policy.html">Privacy policy</a></li>
-                                    <li class="f-link-ul-li"><a href="return-policy.html">Return policy</a></li>
-                                    <li class="f-link-ul-li"><a href="shipping-policy.html">Shipping policy</a></li>
-                                    <li class="f-link-ul-li"><a href="terms-conditions.html">Terms & conditions</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Payment policy</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Privacy policy</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Return policy</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Shipping policy</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Terms & conditions</a></li>
                                 </ul>
                             </div>
                             <div class="f-link">
@@ -303,11 +302,11 @@
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="f-link-ul collapse" id="account" data-bs-parent="#footer-accordian">
-                                    <li class="f-link-ul-li"><a href="account.html">My account</a></li>
-                                    <li class="f-link-ul-li"><a href="cart.html">My cart</a></li>
-                                    <li class="f-link-ul-li"><a href="tracking.html">Order history</a></li>
-                                    <li class="f-link-ul-li"><a href="wishlist.html">My wishlist</a></li>
-                                    <li class="f-link-ul-li"><a href="addresses.html">My address</a></li>
+                                    <li class="f-link-ul-li"><a href="#">My account</a></li>
+                                    <li class="f-link-ul-li"><a href="#">My cart</a></li>
+                                    <li class="f-link-ul-li"><a href="#">Order history</a></li>
+                                    <li class="f-link-ul-li"><a href="#">My wishlist</a></li>
+                                    <li class="f-link-ul-li"><a href="#">My address</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -334,7 +333,7 @@
                             <a href="https://www.youtube.com/" class="f-icn-link"><i class="fa fa-youtube"></i></a>
                         </li>
                         <li class="f-c f-payment">
-                            <a href="checkout-1.html"><img src="<?= base_url() ?>image/payment.png" class="img-fluid" alt="payment image"></a>
+                            <a href="#"><img src="<?= base_url() ?>image/payment.png" class="img-fluid" alt="payment image"></a>
                         </li>
                     </ul>
                 </div>

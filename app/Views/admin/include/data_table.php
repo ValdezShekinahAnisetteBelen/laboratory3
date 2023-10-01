@@ -108,37 +108,45 @@
                             </div>
                             <!-- End of Product Form Modal -->
                             <div class="QA_table mb_30">
-                                <table id="product-table" class="table lms_table_active">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Image</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Category</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($products as $product): ?>
-                                            <tr>
-                                                <td><?= $product['id'] ?></td>
-                                                <td><?= $product['name'] ?></td>
-                                                <td><?= $product['description'] ?></td>
-                                                <td data-image="<?= base_url('image/') ?>"></td>
-                                                <td><?= '$' . number_format($product['price'], 2) ?></td>
-                                                <td><?= $product['category'] ?></td>
-                                                <td><?= $product['quantity'] ?></td>
-                                                <td>
-                                                    <button class="btn btn-success edit-product text-white" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
-                                                    <a class="btn btn-danger text-white" href="/delete/<?= esc($product['id']) ?>">Delete</a>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                </table>
+    <table id="product-table" class="table lms_table_active">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Category</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php foreach ($products as $product): ?>
+        <tr>
+            <td><?= $product['id'] ?></td>
+            <td><?= $product['name'] ?></td>
+            <td><?= $product['description'] ?></td>
+            <td></td>
+            <td><?= '$' . number_format($product['price'], 2) ?></td>
+            <td><?= $product['category'] ?></td>
+            <td><?= $product['quantity'] ?></td>
+            <td>
+                <button class="btn btn-success edit-product text-white" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
+                <a class="btn btn-danger text-white" href="/delete/<?= esc($product['id']) ?>">Delete</a>
+            </td>
+        </tr>
+        <!-- New row for the image spanning across columns -->
+            <td colspan="3"></td> <!-- Create an empty cell to offset the image -->
+            <td colspan="16" class="image-td"> <!-- This colspan spans across all columns except the first 4 -->
+                <img src="<?= strpos($product['image'], 'http') === 0 ? $product['image'] : base_url($product['image']) ?>" alt="Image" width="100">
+            </td>
+        
+    <?php endforeach; ?>
+</tbody>
+
+
+
                                 <!-- Edit Product Modal -->
                                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -196,17 +204,20 @@
     </section>
 
     <script>
-        $(document).ready(function () {
-            $('#product-table').DataTable();
+    $(document).ready(function () {
+        $('#product-table').DataTable();
 
-            $('#product-table tbody tr').each(function () {
-                var imagePath = $(this).find('td[data-image]').data('image');
-                var imageName = $(this).find('td:eq(3)').text();
-                var imageUrl = imagePath + imageName;
-                $(this).find('td:eq(3)').html('<img src="' + imageUrl + '" alt="image" width="100">');
-            });
+        $('#product-table tbody tr').each(function () {
+            var imagePath = $(this).find('td[data-image]').data('image');
+            var imageName = $(this).find('td:eq(3)').text();
+
+          
+            var imageUrl = '<?= base_url('image/') ?>' + imageName;
+
+            $(this).find('td:eq(3)').html('<img src="' + imageUrl + '" alt="image" width="100">');
         });
-    </script>
+    });
+</script>
 
     <script>
         $(document).ready(function () {

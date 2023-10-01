@@ -55,7 +55,7 @@
 <body class="crm_body_bg">
     <nav class="sidebar">
         <div class="logo d-flex justify-content-center">
-            <a href="#"><img src="admin/img/logo1.svg" alt="" width="300" height="70"></a>
+        <a href="#"><img src="<?= base_url('admin/img/logo1.svg') ?>" alt="" width="300" height="70"></a>
         </div>
 
         <div class="sidebar_close_icon d-lg-none">
@@ -70,7 +70,7 @@
                 </a>
                 <ul class="submenu" id="homeSubMenu">
                     <li class="active">
-                        <a href="/admins"><img src="admin/img/menu-icon/logo1.svg" alt=""
+                    <a href="<?= base_url('/admins') ?>"><img src="<?= base_url('admin/img/menu-icon/logo1.svg') ?>" alt=""
                                 style="width: 17px; height: 17px;">Anisette </a>
                     </li>
                 </ul>

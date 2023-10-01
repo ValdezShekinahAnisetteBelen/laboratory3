@@ -134,12 +134,12 @@
                                             </li>
                                             <!-- SHOP -->
                                             <li class="menu-link parent">
-                                                <a href="/shop" class="link-title">
+                                                <a href="#" class="link-title">
                                                     <span class="sp-link-title">Shop</span>
                                                 </a>
                                             </li>
                                             <li class="menu-link parent">
-                                                <a href="grid-list.html" class="link-title">
+                                                <a href="#" class="link-title">
                                                     <span class="sp-link-title">Collection</span>
                                                 </a>
                                             </li>

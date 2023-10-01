@@ -65,35 +65,35 @@ class AdminController extends BaseController
         $data = [
             'name' => $this->request->getVar('name'),
             'description' => $this->request->getVar('description'),
-            'image' => $this->request->getVar('price'),
             'price' => $this->request->getVar('price'),
             'category' => $this->request->getVar('category'),
             'quantity' => $this->request->getVar('quantity'),
         ];
-
+    
         $image = $this->request->getFile('image');
-
+    
         if ($image->isValid() && !$image->hasMoved()) {
             $uploadPath = FCPATH . 'image/';
             $newName = $image->getRandomName();
             $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
-
+    
             if (in_array($image->getClientExtension(), $allowedTypes)) {
                 $image->move($uploadPath, $newName);
-                $data['image'] = 'image/' . $newName;
+                $data['image'] = base_url('image/') . $newName; // Use base_url() here
             } else {
                 return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
             }
         }
-
+    
         if (!empty($id)) {
             $this->productModel->set($data)->where('id', $id)->update();
         } else {
             $this->productModel->insert($data);
         }
-
+    
         return redirect()->to('/data_table');
     }
+    
 
     public function delete($id)
     {
@@ -116,24 +116,25 @@ class AdminController extends BaseController
             'category' => $this->request->getVar('category'),
             'quantity' => $this->request->getVar('quantity'),
         ];
-
+    
         $image = $this->request->getFile('image');
-
+    
         if ($image->isValid() && !$image->hasMoved()) {
             $uploadPath = FCPATH . 'image/';
             $newName = $image->getRandomName();
             $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
-
+    
             if (in_array($image->getClientExtension(), $allowedTypes)) {
                 $image->move($uploadPath, $newName);
-                $data['image'] = 'image/' . $newName;
+                $data['image'] = base_url('image/') . $newName; // Use base_url() here
             } else {
                 return redirect()->back()->with('error', 'Invalid image format. Allowed formats: jpg, jpeg, png, gif, svg');
             }
         }
-
+    
         $this->productModel->set($data)->where('id', $id)->update();
-
+    
         return redirect()->to('/data_table');
     }
+    
 }

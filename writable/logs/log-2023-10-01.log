@@ -1,0 +1,10 @@
+CRITICAL - 2023-10-01 05:56:41 --> Invalid file: "shop.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('shop.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('shop', [], true)
+ 3 APPPATH\Controllers\Home.php(26): view('shop', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\Home->shop()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')

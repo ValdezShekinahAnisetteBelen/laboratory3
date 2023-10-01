@@ -38,6 +38,7 @@ class AdminController extends BaseController
 
     public function index()
     {
+        
         return $this->returnViewWithData('admin/include/data_table');
     }
 

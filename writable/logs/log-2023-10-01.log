@@ -111,3 +111,18 @@ in APPPATH\Views\admin\include\data_table.php on line 141.
  9 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')
+CRITICAL - 2023-10-01 12:41:15 --> Invalid file: "include/top1.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('include/top1.php')
+ 2 SYSTEMPATH\View\View.php(467): CodeIgniter\View\View->render('include/top1', null, true)
+ 3 APPPATH\Views\admin\include\index.php(11): CodeIgniter\View\View->include('include/top1')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\laboratory3\\app\\Views\\admin\\include\\index.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/include/index', [], true)
+ 7 APPPATH\Controllers\AdminController.php(26): view('admin/include/index', [...])
+ 8 APPPATH\Controllers\AdminController.php(36): App\Controllers\AdminController->returnViewWithData('admin/include/index')
+ 9 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->admin()
+10 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+11 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\laboratory3\\public\\index.php')

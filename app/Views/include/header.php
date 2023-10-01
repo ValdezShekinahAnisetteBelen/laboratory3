@@ -51,7 +51,7 @@
                         <!-- logo start -->
                         <div class="header-element logo">
                             <a href="index1.html">
-                                <img src="image/logo1.svg" alt="logo-image" class="img-fluid">
+                                <img src="<?=base_url() ?>image/logo1.svg" alt="logo-image" class="img-fluid">
                             </a>
                         </div>
                         <!-- logo end -->

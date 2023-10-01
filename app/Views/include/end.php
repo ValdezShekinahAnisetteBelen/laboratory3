@@ -27,7 +27,7 @@
                             <ul class="footer-ul">
                                 <li class="footer-li footer-logo">
                                     <a href="index1.html">
-                                        <img class="img-fluid" src="image/logo1.svg" alt="">
+                                        <img class="img-fluid" src="<?=base_url() ?>image/logo1.svg" alt="">
                                     </a>
                                 </li>
                                 <li class="footer-li footer-address">

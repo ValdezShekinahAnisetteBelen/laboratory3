@@ -43,7 +43,7 @@
 <body class="crm_body_bg">
     <nav class="sidebar">
         <div class="logo d-flex justify-content-center">
-            <a href="#"><img src="admin/img/logo1.svg" alt="" width="300" height="70"></a>
+            <a href="#"><img src="<?=base_url()?>admin/img/logo1.svg" alt="" width="300" height="70"></a>
         </div>
 
         <div class="sidebar_close_icon d-lg-none">
@@ -53,12 +53,12 @@
         <ul id="sidebar_menu">
             <li class="mm-active">
                 <a class="has-arrow" href="#" aria-expanded="false" data-toggle="collapse" data-target="#homeSubMenu">
-                    <img src="admin/img/menu-icon/dashboard.svg" alt>
+                    <img src="<?=base_url()?>admin/img/menu-icon/dashboard.svg" alt>
                     <span>Home</span>
                 </a>
                 <ul class="submenu" id="homeSubMenu">
                     <li class="active">
-                        <a href="/admins"><img src="admin/img/menu-icon/logo1.svg" alt=""
+                        <a href="/admins"><img src="<?=base_url()?>admin/img/menu-icon/logo1.svg" alt=""
                                 style="width: 17px; height: 17px;">Anisette </a>
                     </li>
                 </ul>
@@ -66,7 +66,7 @@
 
             <li class="mm-active">
                 <a class="has-arrow" href="#" aria-expanded="false" data-toggle="collapse" data-target="#tableSubMenu">
-                    <img src="admin/img/menu-icon/8.svg" alt>
+                    <img src="<?=base_url()?>admin/img/menu-icon/8.svg" alt>
                     <span>Table</span>
                 </a>
                 <ul class="submenu" id="tableSubMenu">
@@ -76,7 +76,7 @@
 
             <li class="mm-active">
                 <a class="has-arrow" href="#" aria-expanded="false" data-toggle="collapse" data-target="#SettingSubMenu">
-                    <img src="admin/img/menu-icon/dashboard.svg" alt>
+                    <img src="<?=base_url()?>admin/img/menu-icon/dashboard.svg" alt>
                     <span>Settings</span>
                 </a>
                 <ul class="submenu" id="SettingSubMenu">

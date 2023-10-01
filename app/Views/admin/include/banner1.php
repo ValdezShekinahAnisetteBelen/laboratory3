@@ -73,7 +73,7 @@
 <body>
     <main role="main" class="col-md-11 ml-sm-auto col-lg-10 px-md-7 main_content">
         <section class="banner-container">
-            <img class="banner-img" src="image/slider3.svg" alt="Banner Image">
+            <img class="banner-img" src="<?=base_url()?>image/slider3.svg" alt="Banner Image">
             <div class="banner-text">
                 <span>Top selling!</span>
                 <h1>Fresh for your health</h1>

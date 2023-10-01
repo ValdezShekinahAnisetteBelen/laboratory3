@@ -77,7 +77,7 @@
                                             </a>
                                         </div>
                                         <div class="user-info">
-                                            <span class="acc-title">Hi User!</span>
+                                            <span class="acc-title">Hi! </span>
                                             <div class="account-login">
                                                 <a href="/logout">Log In/Out</a>
                                             </div>

@@ -43,6 +43,7 @@ class AdminController extends BaseController
 
     public function data_table()
     {
+        $data['products'] = $this->productModel->findAll(); 
         return $this->returnViewWithData('admin/include/data_table');
     }
 

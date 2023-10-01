@@ -24,22 +24,7 @@
                 <ul class="top-home">
                     <li class="top-home-li">
                         <!-- mobile search start -->
-                        <div class="r-search">
-                            <a href="#r-search-modal" class="search-popuup" data-bs-toggle="modal"><i class="fa fa-search"></i></a>
-                            <div class="modal fade" id="r-search-modal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="m-drop-search">
-                                                <input type="text" name="search" placeholder="Search products, brands or advice">
-                                                <a href="search.html" class="search-btn"><i class="fa fa-search"></i></a>
-                                            </div>
-                                            <button type="button" class="close" data-bs-dismiss="modal"><i class="ion-close-round"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      
                         <!-- mobile search end -->
                     </li>
                     <li class="top-home-li t-content">
@@ -72,8 +57,8 @@
                         <!-- logo end -->
                         <!-- search start -->
                         <div class="header-element search-wrap">
-                            <input type="text" name="search" placeholder="Search product.">
-                            <a href="search.html" class="search-btn"><i class="fa fa-search"></i></a>
+                            <input type="hidden" name="search" placeholder="Search product.">
+                           
                         </div>
                         <!-- search end -->
                         <!-- header-icon start -->

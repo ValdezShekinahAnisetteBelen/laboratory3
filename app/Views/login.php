@@ -40,6 +40,9 @@
     .anisette-button:hover {
         background-color: greenyellow;
     }
+    p {
+        font-size: 10px;
+    }
     </style>
 </head>
 <body class="home-1">
@@ -142,6 +145,7 @@
                             <i class="fa fa-shopping-cart"></i> Window Shopping at Anisette Pure Living
                         </a>
                     </button>
+
                 </div>
                     <div class="login-area">
                         <div class="login-box">
@@ -154,10 +158,15 @@
                             <form action="<?= base_url() ?>loginAuth" method="post">
                                 <div class="input-box">
                                     <div class="single-input-fields">
+                                        <p>example (ADMIN) username: shekinah_valdez</p>
+                                        <p>example (USER) username: shem_valdez</p>
                                         <label>Username or Email Address</label>
                                         <input type="text" name="usernameOrEmail" placeholder="Username / Email address" value="<?= set_value('email') ?>" class="form-control">
                                     </div>
                                     <div class="single-input-fields">
+                                        <br>
+                                    <p>example (ADMIN) password: shekinah</p>
+                                    <p>example (USER) password:shem</p>
                                         <label>Password</label>
                                         <input type="password" name="password" placeholder="Enter Password" class="form-control">
                                     </div>

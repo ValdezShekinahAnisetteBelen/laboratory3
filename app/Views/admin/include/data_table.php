@@ -2,7 +2,6 @@
 <?= $this->include('admin/include/header1') ?>
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anisette Pure Living</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <style>
     /* Custom styles */
@@ -23,6 +22,28 @@
         color: white;
         background-color: orange;
     }
+    tr {
+    border-bottom: 1px solid #000; /* Existing style for the bottom border */
+}
+
+/* Add the following style for the colored bottom border */
+tr.colored-border {
+    border-bottom-color: your-color; /* Replace 'your-color' with the desired color value */
+    border-bottom-width: 2px; /* You can adjust the width as needed */
+}
+.dataTables_filter {
+    display: block;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.dataTables_filter label {
+    font-weight: bold; /* Optional: Make the search label bold */
+}
+
+.dataTables_filter input {
+    width: 100%; /* Optional: Make the search input field take up the full width */
+}
+
 </style>
 <body>
     <section class="main_content dashboard_part">
@@ -50,9 +71,9 @@
                             <div class="white_box_tittle list_header">
                                 <h4></h4>
                                 <div class="box_right d-flex lms_block">
-                                    <div class="serach_field_2">
-                                        <div class="search_inner">
-                                            <div class="search_field">
+                                    <div class="">
+                                        <div class="">
+                                            <div class="">
                                                 <input type="hidden">
                                             </div>
                                         </div>
@@ -106,46 +127,46 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- End of Product Form Modal -->
-                            <div class="QA_table mb_30">
-    <table id="product-table" class="table lms_table_active">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Image</th>
-                <th scope="col">Price</th>
-                <th scope="col">Category</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-    <?php foreach ($products as $product): ?>
-        <tr>
-            <td><?= $product['id'] ?></td>
-            <td><?= $product['name'] ?></td>
-            <td><?= $product['description'] ?></td>
-            <td></td>
-            <td><?= '$' . number_format($product['price'], 2) ?></td>
-            <td><?= $product['category'] ?></td>
-            <td><?= $product['quantity'] ?></td>
-            <td>
-                <button class="btn btn-success edit-product text-white" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
-                <a class="btn btn-danger text-white" href="/delete/<?= esc($product['id']) ?>">Delete</a>
-            </td>
-        </tr>
-        <!-- New row for the image spanning across columns -->
-            <td colspan="3"></td> <!-- Create an empty cell to offset the image -->
-            <td colspan="16" class="image-td"> <!-- This colspan spans across all columns except the first 4 -->
-                <img src="<?= strpos($product['image'], 'http') === 0 ? $product['image'] : base_url($product['image']) ?>" alt="Image" width="100">
-            </td>
-        
-    <?php endforeach; ?>
-</tbody>
+                            
 
-
+        <!-- DataTable -->
+        <div class="QA_table mb_30">
+            <table id="product-table" class="table lms_table_active">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($products as $product): ?>
+                    <tr>
+                        <td><?= $product['id'] ?></td>
+                        <td><?= $product['name'] ?></td>
+                        <td><?= $product['description'] ?></td>
+                        <td data-search="<?= $product['image'] ?>" style="max-width: 100px;">
+                        <a href="<?= strpos($product['image'], 'http') === 0 ? $product['image'] : base_url($product['image']) ?>" target="_blank">
+                            <img src="<?= strpos($product['image'], 'http') === 0 ? $product['image'] : base_url($product['image']) ?>" alt="Image" width="100">
+                        </a>
+                        <td><?= '$' . number_format($product['price'], 2) ?></td>
+                        <td><?= $product['category'] ?></td>
+                        <td><?= $product['quantity'] ?></td>
+                        <td>
+                            <button class="btn btn-success edit-product text-white" data-toggle="modal" data-target="#editModal" data-product-id="<?= $product['id'] ?>">Edit</button>
+                            <a class="btn btn-danger text-white" href="/delete/<?= esc($product['id']) ?>">Delete</a>
+                        </td>
+                    </tr>
+                  
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
 
                                 <!-- Edit Product Modal -->
                                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -202,22 +223,9 @@
             </div>
         </div>
     </section>
-
-    <script>
-    $(document).ready(function () {
-        $('#product-table').DataTable();
-
-        $('#product-table tbody tr').each(function () {
-            var imagePath = $(this).find('td[data-image]').data('image');
-            var imageName = $(this).find('td:eq(3)').text();
-
-          
-            var imageUrl = '<?= base_url('image/') ?>' + imageName;
-
-            $(this).find('td:eq(3)').html('<img src="' + imageUrl + '" alt="image" width="100">');
-        });
-    });
-</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+   
 
     <script>
         $(document).ready(function () {

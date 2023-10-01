@@ -77,7 +77,7 @@
             <div class="banner-text">
                 <span>Top selling!</span>
                 <h1>Fresh for your health</h1>
-                <a href="grid-list.html" class="btn btn-style1">Shop now</a>
+                <a href="#" class="btn btn-style1">Shop now</a>
             </div>
         </section>
     </main>
